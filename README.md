@@ -13,12 +13,12 @@ v = w * v + c1 * r1 * (pbest - x) + c2 * r2 * (gbest - x)
 x = x + v
 ```
 
-| Symbol | Meaning |
-|---|---|
-| `w` | inertia weight (exploration vs. exploitation) |
-| `c1` | cognitive coefficient (trust in own memory) |
-| `c2` | social coefficient (trust in the swarm) |
-| `r1, r2` | random numbers in [0, 1] |
+| Symbol   | Meaning                                       |
+| -------- | --------------------------------------------- |
+| `w`      | inertia weight (exploration vs. exploitation) |
+| `c1`     | cognitive coefficient (trust in own memory)   |
+| `c2`     | social coefficient (trust in the swarm)       |
+| `r1, r2` | random numbers in [0, 1]                      |
 
 ## Features
 
@@ -71,13 +71,13 @@ print(result.best_value, result.best_position)
 
 ### 1. Benchmark functions (10-D, 40 particles, 300 iterations, 20 runs)
 
-| Function | Mean best | Std | Best run |
-|---|---|---|---|
-| Sphere | 9.15e-23 | 2.00e-22 | 1.67e-25 |
-| Ackley | 1.83e-10 | 4.32e-10 | 8.87e-12 |
-| Griewank | 9.56e-02 | 3.96e-02 | 3.51e-02 |
-| Rosenbrock | 1.04e+01 | 1.79e+01 | 0.248 |
-| Rastrigin | 6.67 | 2.46 | 1.99 |
+| Function   | Mean best | Std      | Best run |
+| ---------- | --------- | -------- | -------- |
+| Sphere     | 9.15e-23  | 2.00e-22 | 1.67e-25 |
+| Ackley     | 1.83e-10  | 4.32e-10 | 8.87e-12 |
+| Griewank   | 9.56e-02  | 3.96e-02 | 3.51e-02 |
+| Rosenbrock | 1.04e+01  | 1.79e+01 | 0.248    |
+| Rastrigin  | 6.67      | 2.46     | 1.99     |
 
 PSO solves the smooth unimodal Sphere and Ackley almost perfectly. On highly multimodal Rastrigin and the narrow-valley Rosenbrock it often settles in a local optimum, which is the classic premature-convergence behaviour of PSO.
 
@@ -93,11 +93,11 @@ A linearly decaying inertia weight (0.9 to 0.4) explores widely at first and ref
 
 Each particle encodes all 33 weights of a 2-8-1 network; fitness is the binary cross-entropy loss.
 
-| Metric | Value |
-|---|---|
+| Metric              | Value  |
+| ------------------- | ------ |
 | Final training loss | 0.0047 |
-| Train accuracy | 100% |
-| Test accuracy | 98.3% |
+| Train accuracy      | 100%   |
+| Test accuracy       | 98.3%  |
 
 ![NN trained with PSO](assets/nn_pso.png)
 
@@ -110,4 +110,4 @@ Each particle encodes all 33 weights of a 2-8-1 network; fitness is the binary c
 
 ## License
 
-MIT. See [LICENSE](LICENSE). Replace `<YOUR NAME>` in the license file with your name.
+MIT. See [LICENSE](LICENSE).
